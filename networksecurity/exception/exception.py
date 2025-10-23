@@ -29,3 +29,12 @@ class NetworkException(Exception):
     def __repr__(self):
 
         return NetworkException.__name__.__str__()
+
+
+if __name__ == "__main__":
+    try:
+        logger.info("enter the try block")
+        a = 1 / 0
+        print("this will not be printed")
+    except Exception as e:
+        raise NetworkException(e, sys)
