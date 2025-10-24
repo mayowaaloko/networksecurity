@@ -1,5 +1,6 @@
 import sys
-from networksecurity.logging import logger
+from networksecurity.logging.logger import logging
+
 
 
 class NetworkException(Exception):
@@ -8,7 +9,7 @@ class NetworkException(Exception):
         self.error_message = NetworkException.get_detailed_error_message(
             error_message, error_detail=error_detail
         )
-        logger.info(self.error_message)
+        logging.info(self.error_message)
 
     @staticmethod
     def get_detailed_error_message(error_message, error_detail: sys):
