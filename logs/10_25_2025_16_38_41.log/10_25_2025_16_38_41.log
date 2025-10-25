@@ -1,0 +1,82 @@
+[2025-10-25 16:38:56,884] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2025-10-25 16:38:56,893] 107 dagshub - INFO - Accessing as mayowaaloko
+[2025-10-25 16:38:58,103] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/mayowaaloko/networksecurity "HTTP/1.1 200 OK"
+[2025-10-25 16:38:58,942] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2025-10-25 16:38:58,945] 107 dagshub - INFO - Initialized MLflow to track repo "mayowaaloko/networksecurity"
+[2025-10-25 16:38:58,946] 107 dagshub - INFO - Repository mayowaaloko/networksecurity initialized!
+[2025-10-25 16:39:00,088] 20 root - INFO - initiate the data ingestion
+[2025-10-25 16:39:18,238] 67 root - INFO - Performed train test split on the dataframe
+[2025-10-25 16:39:18,238] 68 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2025-10-25 16:39:18,239] 73 root - INFO - Exporting train and test file path.
+[2025-10-25 16:39:18,313] 81 root - INFO - Exported train and test file path.
+[2025-10-25 16:39:18,314] 22 root - INFO - completed the data ingestion
+[2025-10-25 16:39:18,323] 27 root - INFO - initiate the data validation
+[2025-10-25 16:39:18,454] 43 root - INFO - Required number of columns: 31
+[2025-10-25 16:39:18,455] 44 root - INFO - Data frame has columns: 31
+[2025-10-25 16:39:18,455] 43 root - INFO - Required number of columns: 31
+[2025-10-25 16:39:18,455] 44 root - INFO - Data frame has columns: 31
+[2025-10-25 16:39:18,658] 145 root - INFO - Data validation artifact: DataValidationArtifact(validation_status=None, valid_train_file_path='artifacts\\10_25_2025_16_38_43\\data_validation\\validated\\train.csv', valid_test_file_path='artifacts\\10_25_2025_16_38_43\\data_validation\\validated\\test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifacts\\10_25_2025_16_38_43\\data_validation\\drift_report\\drift_report.yaml')
+[2025-10-25 16:39:18,659] 29 root - INFO - completed the data validation
+[2025-10-25 16:39:18,659] 34 root - INFO - initiate the data transformation
+[2025-10-25 16:39:18,659] 66 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2025-10-25 16:39:18,660] 68 root - INFO - starting data transformation
+[2025-10-25 16:39:18,751] 55 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2025-10-25 16:39:18,751] 58 root - INFO - Initiated KNNImputer object with params: {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2025-10-25 16:39:18,780] 60 root - INFO - Entered the save_object method of MainUtils class
+[2025-10-25 16:39:18,787] 65 root - INFO - Exited the save_object method of MainUtils class
+[2025-10-25 16:39:18,788] 60 root - INFO - Entered the save_object method of MainUtils class
+[2025-10-25 16:39:18,794] 65 root - INFO - Exited the save_object method of MainUtils class
+[2025-10-25 16:39:18,795] 114 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_train_file_path='artifacts\\10_25_2025_16_38_43\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifacts\\10_25_2025_16_38_43\\data_transformation\\transformed\\test.npy', preprocessed_object_file_path='artifacts\\10_25_2025_16_38_43\\data_transformation\\transformed_object\\preprocessing.pkl')
+[2025-10-25 16:39:18,797] 36 root - INFO - completed the data transformation
+[2025-10-25 16:39:18,797] 39 root - INFO - Model training started
+[2025-10-25 16:39:18,797] 159 root - INFO - \U0001f680 Starting model trainer...
+[2025-10-25 16:47:00,799] 18 root - INFO - Classification metrics: F1=0.991544191664989, Precision=0.989353153877059, Recall=0.9937449556093624
+[2025-10-25 16:47:00,807] 18 root - INFO - Classification metrics: F1=0.9732840115084258, Precision=0.961038961038961, Recall=0.9858451290591174
+[2025-10-25 16:47:00,827] 60 root - INFO - Entered the save_object method of MainUtils class
+[2025-10-25 16:47:00,850] 65 root - INFO - Exited the save_object method of MainUtils class
+[2025-10-25 16:47:00,850] 60 root - INFO - Entered the save_object method of MainUtils class
+[2025-10-25 16:47:00,873] 65 root - INFO - Exited the save_object method of MainUtils class
+[2025-10-25 16:47:23,551] 12 root - INFO - 
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [60] and exception block line number: [65] 
+        error message: [INTERNAL_ERROR: Response: {'error': 'unsupported endpoint, please contact support@dagshub.com'}]
+        
+[2025-10-25 16:47:23,551] 12 root - INFO - 
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [137] and exception block line number: [155] 
+        error message: [
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [60] and exception block line number: [65] 
+        error message: [INTERNAL_ERROR: Response: {'error': 'unsupported endpoint, please contact support@dagshub.com'}]
+        ]
+        
+[2025-10-25 16:47:23,551] 12 root - INFO - 
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [173] and exception block line number: [177] 
+        error message: [
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [137] and exception block line number: [155] 
+        error message: [
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [60] and exception block line number: [65] 
+        error message: [INTERNAL_ERROR: Response: {'error': 'unsupported endpoint, please contact support@dagshub.com'}]
+        ]
+        ]
+        
+[2025-10-25 16:47:23,551] 12 root - INFO - 
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\main.py] at try block line number: [42] and exception block line number: [48] 
+        error message: [
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [173] and exception block line number: [177] 
+        error message: [
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [137] and exception block line number: [155] 
+        error message: [
+        Error occurred in script: 
+            [C:\Users\DELL\Desktop\NetworkAnalysis\networksecurity\components\model_trainer.py] at try block line number: [60] and exception block line number: [65] 
+        error message: [INTERNAL_ERROR: Response: {'error': 'unsupported endpoint, please contact support@dagshub.com'}]
+        ]
+        ]
+        ]
+        

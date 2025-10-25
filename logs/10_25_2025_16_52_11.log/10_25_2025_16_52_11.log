@@ -1,0 +1,41 @@
+[2025-10-25 16:52:19,049] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2025-10-25 16:52:19,058] 107 dagshub - INFO - Accessing as mayowaaloko
+[2025-10-25 16:52:19,705] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/mayowaaloko/networksecurity "HTTP/1.1 200 OK"
+[2025-10-25 16:52:20,531] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2025-10-25 16:52:20,538] 107 dagshub - INFO - Initialized MLflow to track repo "mayowaaloko/networksecurity"
+[2025-10-25 16:52:20,541] 107 dagshub - INFO - Repository mayowaaloko/networksecurity initialized!
+[2025-10-25 16:52:21,268] 20 root - INFO - initiate the data ingestion
+[2025-10-25 16:53:17,795] 67 root - INFO - Performed train test split on the dataframe
+[2025-10-25 16:53:17,796] 68 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2025-10-25 16:53:17,796] 73 root - INFO - Exporting train and test file path.
+[2025-10-25 16:53:17,872] 81 root - INFO - Exported train and test file path.
+[2025-10-25 16:53:17,873] 22 root - INFO - completed the data ingestion
+[2025-10-25 16:53:17,882] 27 root - INFO - initiate the data validation
+[2025-10-25 16:53:17,980] 43 root - INFO - Required number of columns: 31
+[2025-10-25 16:53:17,980] 44 root - INFO - Data frame has columns: 31
+[2025-10-25 16:53:17,980] 43 root - INFO - Required number of columns: 31
+[2025-10-25 16:53:17,980] 44 root - INFO - Data frame has columns: 31
+[2025-10-25 16:53:18,150] 145 root - INFO - Data validation artifact: DataValidationArtifact(validation_status=None, valid_train_file_path='artifacts\\10_25_2025_16_52_13\\data_validation\\validated\\train.csv', valid_test_file_path='artifacts\\10_25_2025_16_52_13\\data_validation\\validated\\test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifacts\\10_25_2025_16_52_13\\data_validation\\drift_report\\drift_report.yaml')
+[2025-10-25 16:53:18,150] 29 root - INFO - completed the data validation
+[2025-10-25 16:53:18,151] 34 root - INFO - initiate the data transformation
+[2025-10-25 16:53:18,151] 66 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2025-10-25 16:53:18,151] 68 root - INFO - starting data transformation
+[2025-10-25 16:53:18,229] 55 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2025-10-25 16:53:18,229] 58 root - INFO - Initiated KNNImputer object with params: {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2025-10-25 16:53:18,246] 60 root - INFO - Entered the save_object method of MainUtils class
+[2025-10-25 16:53:18,252] 65 root - INFO - Exited the save_object method of MainUtils class
+[2025-10-25 16:53:18,252] 60 root - INFO - Entered the save_object method of MainUtils class
+[2025-10-25 16:53:18,255] 65 root - INFO - Exited the save_object method of MainUtils class
+[2025-10-25 16:53:18,256] 114 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_train_file_path='artifacts\\10_25_2025_16_52_13\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifacts\\10_25_2025_16_52_13\\data_transformation\\transformed\\test.npy', preprocessed_object_file_path='artifacts\\10_25_2025_16_52_13\\data_transformation\\transformed_object\\preprocessing.pkl')
+[2025-10-25 16:53:18,257] 36 root - INFO - completed the data transformation
+[2025-10-25 16:53:18,257] 39 root - INFO - Model training started
+[2025-10-25 16:53:18,258] 205 root - INFO - \U0001f680 Starting model trainer...
+[2025-10-25 16:59:08,556] 18 root - INFO - Classification metrics: F1=0.991559035899522, Precision=0.9904510361641609, Recall=0.9926695174098962
+[2025-10-25 16:59:08,566] 18 root - INFO - Classification metrics: F1=0.9740932642487047, Precision=0.9675376088677752, Recall=0.9807383627608347
+[2025-10-25 16:59:08,586] 60 root - INFO - Entered the save_object method of MainUtils class
+[2025-10-25 16:59:08,609] 65 root - INFO - Exited the save_object method of MainUtils class
+[2025-10-25 16:59:08,609] 60 root - INFO - Entered the save_object method of MainUtils class
+[2025-10-25 16:59:08,631] 65 root - INFO - Exited the save_object method of MainUtils class
+[2025-10-25 16:59:54,820] 80 root - INFO - \u2705 Metrics and model artifact logged to DagsHub for RandomForest.
+[2025-10-25 16:59:55,617] 197 root - INFO - \u2705 Model trainer artifact created: ModelTrainerArtifact(trained_model_file_path='artifacts\\10_25_2025_16_52_13\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.991559035899522, precision_score=0.9904510361641609, recall_score=0.9926695174098962), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9740932642487047, precision_score=0.9675376088677752, recall_score=0.9807383627608347))
+[2025-10-25 16:59:55,619] 43 root - INFO - Model training completed
