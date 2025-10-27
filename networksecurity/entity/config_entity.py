@@ -7,16 +7,22 @@ from networksecurity.logging.logger import logging
 print(training_pipeline.PIPELINE_NAME)
 print(training_pipeline.ARTIFACT_DIR)
 
-
 class TrainingPipelineConfig:
     def __init__(self, timestamp=datetime.now()):
         timestamp = timestamp.strftime("%m_%d_%Y_%H_%M_%S")
+
+        # Local pipeline paths
         self.timestamp = timestamp
         self.pipeline_name = training_pipeline.PIPELINE_NAME
         self.artifact_name = training_pipeline.ARTIFACT_DIR
         self.artifact_dir = os.path.join(self.artifact_name, timestamp)
-        self.timestamp: str = timestamp
 
+        # 🪣 AWS S3 Sync Settings
+        self.s3_bucket_name = "network-security-mayowa" # ✅ your S3 bucket name
+        self.aws_profile_name = "default"         # or your actual AWS CLI profile
+        self.saved_model_dir = "final_model"     # local model folder to sync
+        self.sync_artifact_dir = True             # enable/disable artifact sync
+        self.sync_saved_model_dir = True          # enable/disable model sync
 
 class DataIngestionConfig:
     def __init__(self, training_pipeline_config: TrainingPipelineConfig):
