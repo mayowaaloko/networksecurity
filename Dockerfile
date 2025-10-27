@@ -1,12 +1,12 @@
-FROM python:3.10-slim-buster
+FROM python:3.10-slim-bookworm
 
 # Set working directory
 WORKDIR /app
 
-# Copy project files into container
+# Copy everything into the container
 COPY . /app
 
-# Install system dependencies and AWS CLI
+# Install dependencies (updated repo URLs & AWS CLI)
 RUN apt-get update -y && \
     apt-get install -y awscli && \
     rm -rf /var/lib/apt/lists/*
@@ -14,8 +14,5 @@ RUN apt-get update -y && \
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the app port
-EXPOSE 8080
-
-# Run your FastAPI app (uses app_run in app.py)
-CMD ["python", "app.py"]
+# Default command
+CMD ["python3", "app.py"]
